@@ -155,26 +155,26 @@ game:GetService("RunService").RenderStepped:Connect(
 
 
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/im-retarded-3"))()
-local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+--local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/im-retarded-3"))()
+--local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
-local Tab1 = Window:CreateTab("The Wild West")
-local Tab2 = Window:CreateTab("UI Settings")
+--local Tab1 = Window:CreateTab("The Wild West")
+--local Tab2 = Window:CreateTab("UI Settings")
 
-local Section1 = Tab1:CreateSection("")
-local Section2 = Tab1:CreateSection("")
-local Section3 = Tab2:CreateSection("Menu")
-local Section4 = Tab2:CreateSection("Background")
+--local Section1 = Tab1:CreateSection("")
+--local Section2 = Tab1:CreateSection("")
+--local Section3 = Tab2:CreateSection("Menu")
+--local Section4 = Tab2:CreateSection("Background")
 
-local Toggle1 = Section1:CreateToggle("Auto Sprint", nil, function(State)
-sex = State
-game:GetService("RunService").Stepped:Connect(
-    function()
-        if sex then
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 25
-        end
-    end
-)
+--local Toggle1 = Section1:CreateToggle("Auto Sprint", nil, function(State)
+--sex = State
+--game:GetService("RunService").Stepped:Connect(
+--    function()
+--        if sex then
+--            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 25
+--        end
+--    end
+--)
 
 end)
 local Toggle1 = Section1:CreateToggle("FullBright", nil, function(State)
