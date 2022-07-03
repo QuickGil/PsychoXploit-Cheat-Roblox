@@ -155,16 +155,16 @@ game:GetService("RunService").RenderStepped:Connect(
 
 
 
---local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/im-retarded-3"))()
---local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/im-retarded-3"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
---local Tab1 = Window:CreateTab("The Wild West")
---local Tab2 = Window:CreateTab("UI Settings")
+local Tab1 = Window:CreateTab("The Wild West")
+local Tab2 = Window:CreateTab("UI Settings")
 
---local Section1 = Tab1:CreateSection("")
---local Section2 = Tab1:CreateSection("")
---local Section3 = Tab2:CreateSection("Menu")
---local Section4 = Tab2:CreateSection("Background")
+local Section1 = Tab1:CreateSection("")
+local Section2 = Tab1:CreateSection("")
+local Section3 = Tab2:CreateSection("Menu")
+local Section4 = Tab2:CreateSection("Background")
 
 local Toggle1 = Section1:CreateToggle("Auto Sprint", nil, function(State)
 sex = State
@@ -366,51 +366,51 @@ Key = {["Weapons"] = {}}
 --end)
 
 
---local Toggle1 = Section1:CreateToggle("InstantBreakFree", nil, function(State)
---getgenv().InstantBreakFree = State
---    Keys["EnterRagdoll"] = hookfunction(R.EnterRagdoll, function(...)
---    if getgenv().InstantBreakFree then
---        coroutine.resume(coroutine.create(function()
---            local Start = tick()
---            repeat
---                wait()
---            until require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):CanBreakFree() or Start - tick() > 4
---            require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter).BreakFreePerc = 5
---        end))
---    end
---    return Keys["EnterRagdoll"](...)
---end)
---end) 
+local Toggle1 = Section1:CreateToggle("InstantBreakFree", nil, function(State)
+getgenv().InstantBreakFree = State
+    Keys["EnterRagdoll"] = hookfunction(R.EnterRagdoll, function(...)
+    if getgenv().InstantBreakFree then
+        coroutine.resume(coroutine.create(function()
+            local Start = tick()
+            repeat
+                wait()
+            until require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):CanBreakFree() or Start - tick() > 4
+            require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter).BreakFreePerc = 5
+        end))
+    end
+    return Keys["EnterRagdoll"](...)
+end)
+end) 
 
---local Toggle1 = Section1:CreateToggle("AutoGetUp", nil, function(State)
---getgenv().AutoGetUp = State
---Keys["EnterRagdoll"] = hookfunction(R.EnterRagdoll, function(...)
---    if getgenv().AutoGetUp then
---        coroutine.resume(coroutine.create(function()
---            local Start = tick()
---            repeat
---                wait()
---            until require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):CanGetUp() or Start - tick() > 2
---            if require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter).IsRagdolledSelf then
---                require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):GetUp()
---            end
---        end))
---    end
---end)
---end)
+local Toggle1 = Section1:CreateToggle("AutoGetUp", nil, function(State)
+getgenv().AutoGetUp = State
+Keys["EnterRagdoll"] = hookfunction(R.EnterRagdoll, function(...)
+    if getgenv().AutoGetUp then
+        coroutine.resume(coroutine.create(function()
+            local Start = tick()
+            repeat
+                wait()
+            until require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):CanGetUp() or Start - tick() > 2
+            if require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter).IsRagdolledSelf then
+                require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):GetUp()
+            end
+        end))
+    end
+end)
+end)
 
---local Toggle1 = Section1:CreateToggle("infinite Stamina", nil, function(State)
---Infinite = State
---local OldNameCall = nil
---OldNameCall = hookmetamethod(game, "__namecall", function(...)
---    local Args = {...}
---    local Self = Args[1]
---    if getnamecallmethod()=="FireServer" and tostring(Self)=="LowerStamina" and Infinite then
---            return wait(math.huge)
---    end
---    return OldNameCall(...)
---end) 
---end)
+local Toggle1 = Section1:CreateToggle("infinite Stamina", nil, function(State)
+Infinite = State
+local OldNameCall = nil
+OldNameCall = hookmetamethod(game, "__namecall", function(...)
+    local Args = {...}
+    local Self = Args[1]
+    if getnamecallmethod()=="FireServer" and tostring(Self)=="LowerStamina" and Infinite then
+            return wait(math.huge)
+    end
+    return OldNameCall(...)
+end) 
+end)
 
 
 ---local Toggle1 = Section1:CreateToggle("NoFall Damage", nil, function(State)
@@ -455,14 +455,14 @@ end
 end)
 
 
---local Toggle1 = Section2:CreateToggle("Wallbang", nil, function(State)
---Wallbang = State
---for i, v in pairs(getgc(true)) do
---    if type(v) == "table" and rawget(v, "BaseRecoil") then
---        v.ProjectilePenetration = Wallbang == false and Key["Weapons"][i].ProjectilePenetration or 9e9
---    end
---end
---end)
+local Toggle1 = Section2:CreateToggle("Wallbang", nil, function(State)
+Wallbang = State
+for i, v in pairs(getgc(true)) do
+    if type(v) == "table" and rawget(v, "BaseRecoil") then
+        v.ProjectilePenetration = Wallbang == false and Key["Weapons"][i].ProjectilePenetration or 9e9
+    end
+end
+end)
 local Toggle1 = Section2:CreateToggle("InstantReload", nil, function(State)
 InstantReload = State
 for i, v in pairs(getgc(true)) do
@@ -474,68 +474,68 @@ for i, v in pairs(getgc(true)) do
 end
 end)
 
---local Toggle1 = Section1:CreateToggle("Anti Rain", nil, function(State)
---rain = State
---local save = game:GetService("ReplicatedStorage").GlobalWeather.RainPercent.Value
---game:GetService("RunService").Stepped:Connect(
---    function()
---        if rain then
---            game:GetService("ReplicatedStorage").GlobalWeather.RainPercent.Value = 0
---        else
---            game:GetService("ReplicatedStorage").GlobalWeather.RainPercent.Value = save
---        end
---    end
---)
---end)
+local Toggle1 = Section1:CreateToggle("Anti Rain", nil, function(State)
+rain = State
+local save = game:GetService("ReplicatedStorage").GlobalWeather.RainPercent.Value
+game:GetService("RunService").Stepped:Connect(
+    function()
+        if rain then
+            game:GetService("ReplicatedStorage").GlobalWeather.RainPercent.Value = 0
+        else
+            game:GetService("ReplicatedStorage").GlobalWeather.RainPercent.Value = save
+        end
+    end
+)
+end)
 
 
---local Toggle1 = Section2:CreateToggle("Ore Esp", nil, function(State)
---getgenv().esp = State
---local function esp(v)
---    local T = Drawing.new("Text")
---    T.Visible = false
---    T.Center = true
---    T.Outline = true
---    T.Font = 2
---    T.Text = "Ore"
---    T.Size = 14
---    T.Color = Color3.fromRGB(203, 214, 73)
---    local function update()
---        local Re
---        Re =
---            game:GetService('RunService').Stepped:Connect(
---            function()
---                if v and v:FindFirstChildOfClass("MeshPart")  then wait()
---                    local Vector, Screen = workspace.CurrentCamera:WorldToViewportPoint(v:FindFirstChildOfClass("MeshPart").Position)
---                    if getgenv().esp and Screen then
---                        T.Position = Vector2.new(Vector.X, Vector.Y)
---                        T.Visible = true
---                        T.Text = v:FindFirstChildOfClass("MeshPart").Name
---                    else
---                        T.Visible = false
---                    end
---                elseif v:FindFirstChildOfClass("MeshPart") == nil then
---                    T:Remove()
---                    Re:disconnect()
---                end
---            end
---        )
---    end
---    update()
---end
+local Toggle1 = Section2:CreateToggle("Ore Esp", nil, function(State)
+getgenv().esp = State
+local function esp(v)
+    local T = Drawing.new("Text")
+    T.Visible = false
+    T.Center = true
+    T.Outline = true
+    T.Font = 2
+    T.Text = "Ore"
+    T.Size = 14
+    T.Color = Color3.fromRGB(203, 214, 73)
+    local function update()
+        local Re
+        Re =
+            game:GetService('RunService').Stepped:Connect(
+            function()
+                if v and v:FindFirstChildOfClass("MeshPart")  then wait()
+                    local Vector, Screen = workspace.CurrentCamera:WorldToViewportPoint(v:FindFirstChildOfClass("MeshPart").Position)
+                    if getgenv().esp and Screen then
+                        T.Position = Vector2.new(Vector.X, Vector.Y)
+                        T.Visible = true
+                        T.Text = v:FindFirstChildOfClass("MeshPart").Name
+                    else
+                        T.Visible = false
+                    end
+                elseif v:FindFirstChildOfClass("MeshPart") == nil then
+                    T:Remove()
+                    Re:disconnect()
+                end
+            end
+        )
+    end
+    update()
+end
 
 
 
---for i, v in pairs(game:GetService("Workspace")["WORKSPACE_Interactables"].Mining.OreDeposits:GetChildren()) do
---    if table.find(OreDeposits, v.Name) then
---        for i, v in pairs(v:GetChildren()) do
---            if v:FindFirstChildOfClass("MeshPart").Name:match("Ore") then
---                esp(v)
---            end
---        end
---    end
---end
---end)
+for i, v in pairs(game:GetService("Workspace")["WORKSPACE_Interactables"].Mining.OreDeposits:GetChildren()) do
+    if table.find(OreDeposits, v.Name) then
+        for i, v in pairs(v:GetChildren()) do
+            if v:FindFirstChildOfClass("MeshPart").Name:match("Ore") then
+                esp(v)
+            end
+        end
+    end
+end
+end)
 
 local Toggle1 = Section2:CreateToggle("Animal Esp", nil, function(State)
 getgenv().esp3 = State
@@ -598,6 +598,15 @@ local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V
 
 local Toggle1 = Section2:CreateToggle("Player Esp", nil, function(State)
     ESP:Toggle(State)
+end)
+local Toggle1 = Section2:CreateToggle("Tracers Esp", nil, function(State)
+    ESP.Tracers = State
+end)
+local Toggle1 = Section2:CreateToggle("Name Esp", nil, function(State)
+    ESP.Names = State
+end)
+local Toggle1 = Section2:CreateToggle("Boxes Esp", nil, function(State)
+    ESP.Boxes = State
 end)
 
 
