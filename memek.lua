@@ -599,15 +599,15 @@ local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V
 local Toggle1 = Section2:CreateToggle("Player Esp", nil, function(State)
     ESP:Toggle(State)
 end)
---local Toggle1 = Section2:CreateToggle("Tracers Esp", nil, function(State)
---    ESP.Tracers = State
---end)
+local Toggle1 = Section2:CreateToggle("Tracers Esp", nil, function(State)
+    ESP.Tracers = State
+end)
 local Toggle1 = Section2:CreateToggle("Name Esp", nil, function(State)
     ESP.Names = State
 end)
---local Toggle1 = Section2:CreateToggle("Boxes Esp", nil, function(State)
---    ESP.Boxes = State
---end)
+local Toggle1 = Section2:CreateToggle("Boxes Esp", nil, function(State)
+    ESP.Boxes = State
+end)
 
 
 
