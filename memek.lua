@@ -382,22 +382,22 @@ getgenv().InstantBreakFree = State
 end)
 end) 
 
---local Toggle1 = Section1:CreateToggle("AutoGetUp", nil, function(State)
---getgenv().AutoGetUp = State
---Keys["EnterRagdoll"] = hookfunction(R.EnterRagdoll, function(...)
---    if getgenv().AutoGetUp then
---        coroutine.resume(coroutine.create(function()
---            local Start = tick()
---            repeat
---                wait()
---            until require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):CanGetUp() or Start - tick() > 2
---            if require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter).IsRagdolledSelf then
---                require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):GetUp()
---            end
---        end))
---    end
---end)
---end)
+local Toggle1 = Section1:CreateToggle("AutoGetUp", nil, function(State)
+getgenv().AutoGetUp = State
+Keys["EnterRagdoll"] = hookfunction(R.EnterRagdoll, function(...)
+    if getgenv().AutoGetUp then
+        coroutine.resume(coroutine.create(function()
+            local Start = tick()
+            repeat
+                wait()
+            until require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):CanGetUp() or Start - tick() > 2
+            if require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter).IsRagdolledSelf then
+                require(game:GetService("ReplicatedStorage").Modules.Character.PlayerCharacter):GetUp()
+            end
+        end))
+    end
+end)
+end)
 
 --local Toggle1 = Section1:CreateToggle("infinite Stamina", nil, function(State)
 --Infinite = State
@@ -455,24 +455,24 @@ end
 end)
 
 
---local Toggle1 = Section2:CreateToggle("Wallbang", nil, function(State)
---Wallbang = State
---for i, v in pairs(getgc(true)) do
---    if type(v) == "table" and rawget(v, "BaseRecoil") then
---        v.ProjectilePenetration = Wallbang == false and Key["Weapons"][i].ProjectilePenetration or 9e9
---    end
---end
---end)
---local Toggle1 = Section2:CreateToggle("InstantReload", nil, function(State)
---InstantReload = State
---for i, v in pairs(getgc(true)) do
---    if type(v) == "table" and rawget(v, "BaseRecoil") then
---        v.ReloadSpeed = InstantReload == false and Key["Weapons"][i].ReloadSpeed or 1000
---        v.LoadSpeed = InstantReload == false and Key["Weapons"][i].LoadSpeed or 1000
---        v.LoadEndSpeed = InstantReload == false and Key["Weapons"][i].LoadEndSpeed or 1000
---    end
---end
---end)
+local Toggle1 = Section2:CreateToggle("Wallbang", nil, function(State)
+Wallbang = State
+for i, v in pairs(getgc(true)) do
+    if type(v) == "table" and rawget(v, "BaseRecoil") then
+        v.ProjectilePenetration = Wallbang == false and Key["Weapons"][i].ProjectilePenetration or 9e9
+    end
+end
+end)
+local Toggle1 = Section2:CreateToggle("InstantReload", nil, function(State)
+InstantReload = State
+for i, v in pairs(getgc(true)) do
+    if type(v) == "table" and rawget(v, "BaseRecoil") then
+        v.ReloadSpeed = InstantReload == false and Key["Weapons"][i].ReloadSpeed or 1000
+        v.LoadSpeed = InstantReload == false and Key["Weapons"][i].LoadSpeed or 1000
+        v.LoadEndSpeed = InstantReload == false and Key["Weapons"][i].LoadEndSpeed or 1000
+    end
+end
+end)
 
 local Toggle1 = Section1:CreateToggle("Anti Rain", nil, function(State)
 rain = State
@@ -599,15 +599,15 @@ local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V
 local Toggle1 = Section2:CreateToggle("Player Esp", nil, function(State)
     ESP:Toggle(State)
 end)
-local Toggle1 = Section2:CreateToggle("Tracers Esp", nil, function(State)
-    ESP.Tracers = State
-end)
+--local Toggle1 = Section2:CreateToggle("Tracers Esp", nil, function(State)
+--    ESP.Tracers = State
+--end)
 local Toggle1 = Section2:CreateToggle("Name Esp", nil, function(State)
     ESP.Names = State
 end)
-local Toggle1 = Section2:CreateToggle("Boxes Esp", nil, function(State)
-    ESP.Boxes = State
-end)
+--local Toggle1 = Section2:CreateToggle("Boxes Esp", nil, function(State)
+--    ESP.Boxes = State
+--end)
 
 
 
