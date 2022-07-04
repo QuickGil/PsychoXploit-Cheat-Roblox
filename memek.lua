@@ -161,8 +161,8 @@ local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 local Tab1 = Window:CreateTab("The Wild West")
 --local Tab2 = Window:CreateTab("UI Settings")
 
---local Section1 = Tab1:CreateSection("")
---local Section2 = Tab1:CreateSection("")
+local Section1 = Tab1:CreateSection("")
+local Section2 = Tab1:CreateSection("")
 --local Section3 = Tab2:CreateSection("Menu")
 --local Section4 = Tab2:CreateSection("Background")
 
