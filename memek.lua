@@ -444,15 +444,15 @@ for i, v in pairs(getgc(true)) do
 end
 end)
 
---local Toggle1 = Section2:CreateToggle("NoSpread", nil, function(State)
---NoSpread = State
---for i, v in pairs(getgc(true)) do
---    if type(v) == "table" and rawget(v, "BaseRecoil") then
---        v.FanAccuracy = NoSpread == false and Key["Weapons"][i].FanAccuracy or 1
---        v.ProjectileAccuracy = NoSpread == false and Key["Weapons"][i].ProjectileAccuracy or 1
---    end
---end
---end)
+local Toggle1 = Section2:CreateToggle("NoSpread", nil, function(State)
+NoSpread = State
+for i, v in pairs(getgc(true)) do
+    if type(v) == "table" and rawget(v, "BaseRecoil") then
+        v.FanAccuracy = NoSpread == false and Key["Weapons"][i].FanAccuracy or 1
+        v.ProjectileAccuracy = NoSpread == false and Key["Weapons"][i].ProjectileAccuracy or 1
+    end
+end
+end)
 
 
 --local Toggle1 = Section2:CreateToggle("Wallbang", nil, function(State)
