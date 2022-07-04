@@ -155,7 +155,7 @@ game:GetService("RunService").RenderStepped:Connect(
 
 
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/im-retarded-3"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/QuickGil/bostterwd/main/cheat.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
 local Tab1 = Window:CreateTab("The Wild West")
