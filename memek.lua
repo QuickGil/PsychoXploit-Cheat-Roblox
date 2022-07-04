@@ -159,12 +159,12 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201f
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
 local Tab1 = Window:CreateTab("The Wild West")
-local Tab2 = Window:CreateTab("UI Settings")
+local Tab2 = Window:CreateTab("About")
 
 local Section1 = Tab1:CreateSection("")
 local Section2 = Tab1:CreateSection("")
 local Section3 = Tab2:CreateSection("Menu")
-local Section4 = Tab2:CreateSection("Background")
+local Section4 = Tab2:CreateSection("WARNING")
 
 local Toggle1 = Section1:CreateToggle("Auto Sprint", nil, function(State)
 sex = State
@@ -720,9 +720,10 @@ Toggle3:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), functi
 	Config.Keybind = Enum.KeyCode[Key]
 end)
 Toggle3:SetState(true)
-Section3:CreateLabel("Credits DekuDimz#7960")
-Section3:CreateLabel("Credits AlexR32#3232 Ui")
-Section3:CreateLabel("Credits FruitBux")
+Section3:CreateLabel("QuickGill x PsychoXploit")
+Section4:CreateLabel("jangan menggunakan cheat ini jika kalian")
+Section4:CreateLabel("tidak ingin di ban")
+
 --local Colorpicker3 = Section3:CreateColorpicker("UI Color", function(Color)
 --	Window:ChangeColor(Color)
 --end)
