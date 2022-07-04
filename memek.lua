@@ -164,7 +164,7 @@ local Tab1 = Window:CreateTab("The Wild West")
 local Section1 = Tab1:CreateSection("")
 local Section2 = Tab1:CreateSection("")
 local Section3 = Tab2:CreateSection("Menu")
---local Section4 = Tab2:CreateSection("Background")
+local Section4 = Tab2:CreateSection("Background")
 
 local Toggle1 = Section1:CreateToggle("Auto Sprint", nil, function(State)
 sex = State
