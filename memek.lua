@@ -399,18 +399,18 @@ Keys["EnterRagdoll"] = hookfunction(R.EnterRagdoll, function(...)
 end)
 end)
 
-local Toggle1 = Section1:CreateToggle("infinite Stamina", nil, function(State)
-Infinite = State
-local OldNameCall = nil
-OldNameCall = hookmetamethod(game, "__namecall", function(...)
-    local Args = {...}
-    local Self = Args[1]
-    if getnamecallmethod()=="FireServer" and tostring(Self)=="LowerStamina" and Infinite then
-            return wait(math.huge)
-    end
-    return OldNameCall(...)
-end) 
-end)
+--local Toggle1 = Section1:CreateToggle("infinite Stamina", nil, function(State)
+--Infinite = State
+--local OldNameCall = nil
+--OldNameCall = hookmetamethod(game, "__namecall", function(...)
+--    local Args = {...}
+--    local Self = Args[1]
+--    if getnamecallmethod()=="FireServer" and tostring(Self)=="LowerStamina" and Infinite then
+--            return wait(math.huge)
+--    end
+--    return OldNameCall(...)
+--end) 
+--end)
 
 
 ---local Toggle1 = Section1:CreateToggle("NoFall Damage", nil, function(State)
@@ -444,25 +444,25 @@ for i, v in pairs(getgc(true)) do
 end
 end)
 
-local Toggle1 = Section2:CreateToggle("NoSpread", nil, function(State)
-NoSpread = State
-for i, v in pairs(getgc(true)) do
-    if type(v) == "table" and rawget(v, "BaseRecoil") then
-        v.FanAccuracy = NoSpread == false and Key["Weapons"][i].FanAccuracy or 1
-        v.ProjectileAccuracy = NoSpread == false and Key["Weapons"][i].ProjectileAccuracy or 1
-    end
-end
-end)
+--local Toggle1 = Section2:CreateToggle("NoSpread", nil, function(State)
+--NoSpread = State
+--for i, v in pairs(getgc(true)) do
+--    if type(v) == "table" and rawget(v, "BaseRecoil") then
+--        v.FanAccuracy = NoSpread == false and Key["Weapons"][i].FanAccuracy or 1
+--        v.ProjectileAccuracy = NoSpread == false and Key["Weapons"][i].ProjectileAccuracy or 1
+--    end
+--end
+--end)
 
 
-local Toggle1 = Section2:CreateToggle("Wallbang", nil, function(State)
-Wallbang = State
-for i, v in pairs(getgc(true)) do
-    if type(v) == "table" and rawget(v, "BaseRecoil") then
-        v.ProjectilePenetration = Wallbang == false and Key["Weapons"][i].ProjectilePenetration or 9e9
-    end
-end
-end)
+--local Toggle1 = Section2:CreateToggle("Wallbang", nil, function(State)
+--Wallbang = State
+--for i, v in pairs(getgc(true)) do
+--    if type(v) == "table" and rawget(v, "BaseRecoil") then
+--       v.ProjectilePenetration = Wallbang == false and Key["Weapons"][i].ProjectilePenetration or 9e9
+--   end
+--end
+--end)
 local Toggle1 = Section2:CreateToggle("InstantReload", nil, function(State)
 InstantReload = State
 for i, v in pairs(getgc(true)) do
