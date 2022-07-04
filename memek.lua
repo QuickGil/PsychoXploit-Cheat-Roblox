@@ -399,18 +399,18 @@ Keys["EnterRagdoll"] = hookfunction(R.EnterRagdoll, function(...)
 end)
 end)
 
---local Toggle1 = Section1:CreateToggle("infinite Stamina", nil, function(State)
---Infinite = State
---local OldNameCall = nil
---OldNameCall = hookmetamethod(game, "__namecall", function(...)
---    local Args = {...}
---    local Self = Args[1]
---    if getnamecallmethod()=="FireServer" and tostring(Self)=="LowerStamina" and Infinite then
---            return wait(math.huge)
---    end
---    return OldNameCall(...)
---end) 
---end)
+local Toggle1 = Section1:CreateToggle("infinite Stamina", nil, function(State)
+Infinite = State
+local OldNameCall = nil
+OldNameCall = hookmetamethod(game, "__namecall", function(...)
+    local Args = {...}
+    local Self = Args[1]
+    if getnamecallmethod()=="FireServer" and tostring(Self)=="LowerStamina" and Infinite then
+            return wait(math.huge)
+    end
+    return OldNameCall(...)
+end) 
+end)
 
 
 ---local Toggle1 = Section1:CreateToggle("NoFall Damage", nil, function(State)
