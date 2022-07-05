@@ -155,7 +155,7 @@ game:GetService("RunService").RenderStepped:Connect(
 
 
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/QuickGil/bostterwd/main/cheat.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/im-retarded-3"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
 local Tab1 = Window:CreateTab("The Wild West")
@@ -336,34 +336,7 @@ end)
 Key = {["Weapons"] = {}}
 
 
---local Toggle1 = Section1:CreateToggle("Anti Ragdoll", nil, function(State)
---AntiRagdoll = State
---Keys["Ragdoll"] = hookfunction(Player.Ragdoll, function(...)
---    if AntiRagdoll and game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
---        return;
---    end
---    return Keys["Ragdoll"](...)
---end)
---end) 
 
---local Toggle1 = Section1:CreateToggle("Infinite animal Boosts", nil, function(State)
---InfiniteBoosts = State
---Keys["Animal-Mount"] =
---    hookfunction(
---    Animal.Mount,
---    function(...)
---        if InfiniteBoosts then
---            Keys["Animal-Mount"](...)
---            local RidingAnimal = AnimalRiding.GetRidingAnimal()
---            RidingAnimal.MaxBoosts = math.huge
---            RidingAnimal.Boosts = math.huge
---
---            return
---        end
---        return Keys["Animal-Mount"](...)
---    end
---)
---end)
 
 
 local Toggle1 = Section1:CreateToggle("InstantBreakFree", nil, function(State)
@@ -399,41 +372,7 @@ Keys["EnterRagdoll"] = hookfunction(R.EnterRagdoll, function(...)
 end)
 end)
 
---local Toggle1 = Section1:CreateToggle("infinite Stamina", nil, function(State)
---Infinite = State
---local OldNameCall = nil
---OldNameCall = hookmetamethod(game, "__namecall", function(...)
---    local Args = {...}
---    local Self = Args[1]
---    if getnamecallmethod()=="FireServer" and tostring(Self)=="LowerStamina" and Infinite then
---            return wait(math.huge)
---    end
---    return OldNameCall(...)
---end) 
---end)
 
-
----local Toggle1 = Section1:CreateToggle("NoFall Damage", nil, function(State)
----NoFall = State
----local OldNameCall = nil
----OldNameCall = hookmetamethod(game, "__namecall", function(...)
----    local Args = {...}
----    local Self = Args[1]
----    if getnamecallmethod()=="FireServer" and tostring(Self)=="DamageSelf" and NoFall then
----            return nil
----    end
----    return OldNameCall(...)
----end) 
----end)
----local Toggle1 = Section1:CreateToggle("Animal AntiRagdoll", nil, function(State)
----AntiAnimalRagdoll = State
----Animal.Ragdoll = function(...)
----    if AntiAnimalRagdoll then
----        return;
----    end
----    return Core["Animal-Ragdoll"](...)
----end
----end)
 
 local Toggle1 = Section2:CreateToggle("NoRecoil", nil, function(State)
 NoRecoil = State
@@ -444,25 +383,10 @@ for i, v in pairs(getgc(true)) do
 end
 end)
 
-local Toggle1 = Section2:CreateToggle("NoSpread", nil, function(State)
-NoSpread = State
-for i, v in pairs(getgc(true)) do
-    if type(v) == "table" and rawget(v, "BaseRecoil") then
-        v.FanAccuracy = NoSpread == false and Key["Weapons"][i].FanAccuracy or 1
-        v.ProjectileAccuracy = NoSpread == false and Key["Weapons"][i].ProjectileAccuracy or 1
-    end
-end
-end)
 
 
---local Toggle1 = Section2:CreateToggle("Wallbang", nil, function(State)
---Wallbang = State
---for i, v in pairs(getgc(true)) do
---    if type(v) == "table" and rawget(v, "BaseRecoil") then
---       v.ProjectilePenetration = Wallbang == false and Key["Weapons"][i].ProjectilePenetration or 9e9
---   end
---end
---end)
+
+
 local Toggle1 = Section2:CreateToggle("InstantReload", nil, function(State)
 InstantReload = State
 for i, v in pairs(getgc(true)) do
@@ -724,43 +648,7 @@ Section3:CreateLabel("QuickGill x PsychoXploit")
 Section4:CreateLabel("jangan menggunakan cheat ini jika kalian")
 Section4:CreateLabel("tidak ingin di ban")
 
---local Colorpicker3 = Section3:CreateColorpicker("UI Color", function(Color)
---	Window:ChangeColor(Color)
---end)
---Colorpicker3:UpdateColor(Config.Color)
--- credits to jan for patterns
---local Dropdown3 = Section4:CreateDropdown("Image")
---local Option7 = Dropdown3:AddOption("Default", function(String)
---	Window:SetBackground("2151741365")
---end)
---local Option8 = Dropdown3:AddOption("Hearts", function(String)
---	Window:SetBackground("6073763717")
---end)
---local Option9 = Dropdown3:AddOption("Abstract", function(String)
---	Window:SetBackground("6073743871")
---end)
---local Option10 = Dropdown3:AddOption("Hexagon", function(String)
---	Window:SetBackground("6073628839")
---end)
---local Option11 = Dropdown3:AddOption("Circles", function(String)
---	Window:SetBackground("6071579801")
---end)
---local Option12 = Dropdown3:AddOption("Lace With Flowers", function(String)
---	Window:SetBackground("6071575925")
---end)
---local Option13 = Dropdown3:AddOption("Floral", function(String)
---	Window:SetBackground("5553946656")
---end)
---Option7:SetOption()
 
---local Colorpicker4 = Section4:CreateColorpicker("Color", function(Color)
---	Window:SetBackgroundColor(Color)
---end)
---Colorpicker4:UpdateColor(Color3.new(1,1,1))
-
---local Slider3 = Section4:CreateSlider("Transparency",0,1,nil,false, function(Value)
---	Window:SetBackgroundTransparency(Value)
---end)
 Slider3:SetValue(0)
 
 local Slider4 = Section4:CreateSlider("Tile Scale",0,1,nil,false, function(Value)
